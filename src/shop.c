@@ -271,7 +271,16 @@ void shop_render(Shop *shop) {
 }
 
 void shop_free(Shop *shop) {
-    (void)shop;
-    /* TODO */
+    size_t i;
+    text_free(&shop->title);
+    text_free(&shop->go_to_title);
+    text_free(&shop->nothing_available);
+    text_free(&shop->money_text);
+    for(i=0;i<UPGRADE_NUM;i++){
+        text_free(shop->upgrades+i);
+        text_free(shop->price_text+i);
+        text_free(shop->level_text+i);
+    }
+    ge_scene_free(&shop->scene);
 }
 

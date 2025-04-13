@@ -418,7 +418,13 @@ void playing_resize(Playing *playing, int w, int h) {
 }
 
 void playing_free(Playing *playing) {
-    (void)playing;
-    /* TODO */
+    terrain_free(&playing->terrain);
+    ge_tilemap_free(&playing->map);
+    ge_renderable_free(&playing->map_renderable);
+    ge_sprite_free(&playing->player_sprite);
+    ge_renderable_free(&playing->player_renderable);
+    progressbar_free(&playing->food_bar_data);
+    text_free(&playing->food_text);
+    ge_scene_free(&playing->scene);
 }
 

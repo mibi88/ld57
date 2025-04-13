@@ -132,7 +132,11 @@ int title_on_shop(Title *title, int x, int y) {
 }
 
 void title_free(Title *title) {
-    (void)title;
-    /* TODO */
+    text_free(&title->title);
+    text_free(&title->play);
+    text_free(&title->shop);
+    text_free(&title->credits);
+    text_free(&title->hiscore_text);
+    ge_scene_free(&title->scene);
 }
 

@@ -121,6 +121,9 @@ int game_over_on_go_to_title(GameOver *game_over, int x, int y) {
 }
 
 void game_over_free(GameOver *game_over) {
-    (void)game_over;
-    /* TODO */
+    text_free(&game_over->game_over);
+    text_free(&game_over->score);
+    text_free(&game_over->retry);
+    text_free(&game_over->title);
+    ge_scene_free(&game_over->scene);
 }

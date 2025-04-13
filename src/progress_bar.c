@@ -75,6 +75,9 @@ int progressbar_update(ProgressBar *bar, int value, int max) {
 }
 
 void progressbar_free(ProgressBar *bar) {
-    (void)bar;
+    ge_image_free(&bar->image);
+    ge_sprite_free(&bar->sprite);
+    ge_texture_free(&bar->texture);
+    ge_renderable_free(&bar->renderable);
 }
 

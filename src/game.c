@@ -265,6 +265,22 @@ void game_render(Game *game, GEWindow *window) {
 
 void game_free(Game *game) {
     (void)game;
-    /* TODO */
+    ge_shader_free(&game->shader);
+    ge_stdshader_free(&game->stdshader);
+    ge_font_free(&game->font);
+    ge_image_free(&game->font_image);
+    ge_texture_free(&game->font_texture);
+    ge_image_free(&game->tileset);
+    ge_texture_free(&game->tileset_texture);
+    ge_image_free(&game->player);
+    ge_texture_free(&game->player_texture);
+    ge_text_free(&game->fps);
+    ge_renderable_free(&game->fps_renderable);
+    ge_scene_free(&game->scene);
+    ge_camera_free(&game->camera);
+    title_free(&game->title);
+    playing_free(&game->playing);
+    shop_free(&game->shop);
+    game_over_free(&game->game_over);
 }
 

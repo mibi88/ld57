@@ -21,7 +21,7 @@ int text_init(Text *text, GEFont *font, GETexture *font_texture,
 }
 
 void text_free(Text *text) {
-    (void)text;
-    /* TODO */
+    ge_text_free(&text->text);
+    ge_renderable_free(&text->renderable);
 }
 
